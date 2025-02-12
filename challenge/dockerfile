@@ -1,0 +1,16 @@
+FROM python:3.9-slim
+
+EXPOSE 5000
+
+WORKDIR /app
+
+COPY . .
+
+ENV MYSQL_HOST=None
+ENV MYSQL_USER=None
+ENV MYSQL_PASSWORD=None
+ENV MYSQL_DATABASE=None
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD [ "python", "app.py"]
